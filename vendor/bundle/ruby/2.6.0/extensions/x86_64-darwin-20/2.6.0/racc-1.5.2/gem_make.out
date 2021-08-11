@@ -1,0 +1,16 @@
+current directory: /Users/idge89/Documents/Dev/rubytify-ror/vendor/bundle/ruby/2.6.0/gems/racc-1.5.2/ext/racc/cparse
+/Users/idge89/.rvm/rubies/ruby-2.6.2/bin/ruby -I /Users/idge89/.rvm/rubies/ruby-2.6.2/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210809-80338-1eu4j6h.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/idge89/Documents/Dev/rubytify-ror/vendor/bundle/ruby/2.6.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/idge89/Documents/Dev/rubytify-ror/vendor/bundle/ruby/2.6.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/idge89/Documents/Dev/rubytify-ror/vendor/bundle/ruby/2.6.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20210809-80338-pwt152/racc

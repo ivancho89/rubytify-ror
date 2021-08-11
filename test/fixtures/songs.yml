@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  album_id: 
+  name: MyString
+  preview_url: MyString
+  spotify_id: 1
+  spotify_url: MyString
+  duration_ms: 1
+  explicit: false
+  created_at: 2021-08-11 18:33:09
+  updated_at: 2021-08-11 18:33:09
+
+two:
+  album_id: 
+  name: MyString
+  preview_url: MyString
+  spotify_id: 1
+  spotify_url: MyString
+  duration_ms: 1
+  explicit: false
+  created_at: 2021-08-11 18:33:09
+  updated_at: 2021-08-11 18:33:09
