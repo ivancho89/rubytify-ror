@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :songs
-  resources :albums
-  resources :artists
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      resources :artists, only: :index do
+        get :albums, on: :member
+      end
+
+
+    end
+  end
 end

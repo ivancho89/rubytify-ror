@@ -43,3 +43,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Add wrapper library for spotify (https://github.com/guilhermesad/rspotify)
+gem 'rspotify'
+
+gem 'rack-cors'
+
+gem "interactor", "~> 3.0"
