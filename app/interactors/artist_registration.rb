@@ -6,26 +6,26 @@ class ArtistRegistration < MainInteractor
   def call    
     spotiy_api
 
-    insert_record(model: artist, resource: :artist, params: artist_map(@spotify_res))
+    @artist_record = insert_record(model: Artist.new, resource: :artist, params: artist_map(@spotify_res))
 
     set_albums
 
   end
 
   def set_albums
-    mapped_albums = albums_map(albums)
-    mapped_albums.each do |album|
-      @artist.albums.build(album.except(:tracks))
-      mapped_songs = songs_map(album[:tracks])
-      mapped_songs.each do  |song|
-        @artist.albums.last.songs.build(song)
+    mapped_albums = albums_map(filter_albums, @artist_record.id)
+    mapped_albums.each do |album|      
+
+      @album_record = insert_record(model: Album.new, resource: :album, params: album.except(:tracks))
+
+      if @album_record != nil
+        mapped_songs = songs_map(album[:tracks], @artist_record.id, @album_record.id)
+        mapped_songs.each do  |song|
+          @song_record = insert_record(model: Song.new, resource: :song, params: song)
+
+        end
       end
     end
-  end
-
-  #Create empty base artist
-  def artist
-    @artist ||= Artist.new
   end
 
   def spotiy_api
@@ -33,7 +33,7 @@ class ArtistRegistration < MainInteractor
   end
 
   #Simple validation to avoid duplicates
-  def albums
+  def filter_albums
     @albums ||= @spotify_res.albums.uniq(&:name)
   end
 end

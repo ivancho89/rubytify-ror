@@ -1,10 +1,28 @@
 # Rubytify
 
+Becuase of the gem file, i recommend you tu use rvm and use ruby-2.6.2 to avoid issues when you are running bundle install.
+If you have any trubles with the bundle install, try removing the Gemfile.lock file and running the bundle again.
+
 ## Instructions
 
-- For the rubytify instructions check this gist: https://gist.github.com/AyendaHoteles/235cd0955799dfc1c9ec5fa28d00f2ae 
-- To upload the code create your own fork of this repo and start a pull request to this repo once you're done with your changes.
+- Run migrations   `bundle exec rake db:migrate`
+- Run the spority pull process `bundle exec rake db:spotify_data`
+    - Check in the console if evrything went well or if something is crashing
 
-## To Improve
+# Run Local
 
-- Create a middle table to add the relation between artist, albun and song to improve search in the future
+- Run `rails server`
+
+## Missing
+
+- Upload to cloud
+- Unit tests
+- Linter or similar for ruby
+
+## To Improve 
+
+- Create a better way to load spotify info into the DB
+- Find a better way to get artist from Spotify to avoid multple calls and just make one
+
+
+

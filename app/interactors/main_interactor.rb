@@ -9,7 +9,7 @@ class MainInteractor
   end
 
   def on_success(record)
-    context.data = record
+    record
   end
 
   def not_found
@@ -20,12 +20,10 @@ class MainInteractor
 
     record = find_by_spotifyId(resource, params[:spotify_id])
     if record.blank?
-      p "new!"
       model.assign_attributes(params)
       model.save ? on_success(model) : context.fail!(error: model.errors.to_s)
     else
-      p "Exists!"
-      context.data = record
+      on_success(record)
     end
   end
 

@@ -2,7 +2,7 @@ require 'yaml'
 namespace :db do
 
     desc 'Read YML file'
-    task pullSpotifyData: :environment do
+    task spotify_data: :environment do
 
         artistList = YAML.load(File.read("config/default_artists.yml"))
 

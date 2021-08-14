@@ -45,7 +45,5 @@ ActiveRecord::Schema.define(version: 2021_08_11_233309) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  
-  add_foreign_key "albums", "artists", on_delete: :cascade
-  add_foreign_key "songs", "albums", on_delete: :cascade
+
 end

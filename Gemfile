@@ -50,3 +50,5 @@ gem 'rspotify'
 gem 'rack-cors'
 
 gem "interactor", "~> 3.0"
+
+gem 'active_model_serializers', '~> 0.10.0'
